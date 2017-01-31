@@ -1,7 +1,7 @@
 ## Microsoft Azure Linux Agent README
 
 ### INTRODUCTION
-
+   
 The Microsoft Azure Linux Agent (waagent) manages Linux & FreeBSD provisioning,
 and VM interaction with the Azure Fabric Controller. It provides the following
 functionality for Linux and FreeBSD IaaS deployments:
