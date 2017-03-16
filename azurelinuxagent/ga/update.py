@@ -61,8 +61,8 @@ CHILD_POLL_INTERVAL = 60
 MAX_FAILURE = 3 # Max failure allowed for agent before blacklisted
 RETAIN_INTERVAL = 24 * 60 * 60 # Retain interval for black list
 
-GOAL_STATE_INTERVAL = 25
-REPORT_STATUS_INTERVAL = 15
+GOAL_STATE_INTERVAL = 1
+REPORT_STATUS_INTERVAL = 1
 
 ORPHAN_WAIT_INTERVAL = 15 * 60 * 60
 

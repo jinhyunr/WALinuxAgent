@@ -169,6 +169,7 @@ class ExtHandlersHandler(object):
         self.ext_handlers, etag = None, None
         try:
             self.protocol = self.protocol_util.get_protocol()
+            logger.info("2: Yoon: Get Goalstate: {0}".format(time.time()))
             self.ext_handlers, etag = self.protocol.get_ext_handlers()
         except ProtocolError as e:
             msg = u"Exception retrieving extension handlers: {0}".format(
@@ -184,6 +185,7 @@ class ExtHandlersHandler(object):
         self.handle_ext_handlers(etag)
         self.last_etag = etag
 
+        logger.info("5: Yoon: Report status: {0}".format(time.time()))
         self.report_ext_handlers_status()
 
     def run_status(self):
@@ -245,6 +247,7 @@ class ExtHandlersHandler(object):
 
         handler_state = ext_handler_i.get_handler_state()
         ext_handler_i.logger.info("Current handler state is: {0}", handler_state)
+        logger.info("3: Yoon: Download/update Ext: {0}".format(time.time()))
         if handler_state == ExtHandlerState.NotInstalled:
             ext_handler_i.set_handler_state(ExtHandlerState.NotInstalled)
 
@@ -264,6 +267,7 @@ class ExtHandlersHandler(object):
         else:
             ext_handler_i.update_settings()
 
+        logger.info("4: Yoon: Enable Ext: {0}".format(time.time()))
         ext_handler_i.enable() 
 
     def handle_disable(self, ext_handler_i):
